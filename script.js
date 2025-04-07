@@ -17,8 +17,9 @@ async function fetchAndFillCountries() {
             throw new Error('Błąd pobierania danych');
         }
         const data = await response.json();
-        const countries = data.map(country => country.name.common);
-        countryInput.innerHTML = countries.map(country => `<option value="${country}">${country}</option>`).join('');
+        const countries = data.map(country => country.name.common).sort();
+        const countriesList = document.getElementById('countriesList');
+        countriesList.innerHTML = countries.map(country => `<option value="${country}">`).join('');
     } catch (error) {
         console.error('Wystąpił błąd:', error);
     }

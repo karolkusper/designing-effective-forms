@@ -99,13 +99,13 @@
 
         <!-- Wiersz 2: Kraj, Numer kierunkowy, Numer telefonu -->
         <div class="row g-3 mt-3">
-          <div class="col-md-4">
-            <label for="country" class="form-label">Kraj</label>
-            <select class="form-select" id="country" required>
-              <option value="">Wybierz kraj</option>
-              <!-- Opcje będą uzupełniane przez JavaScript -->
-            </select>
-          </div>
+            <div class="col-md-4">
+                <label for="country" class="form-label">Kraj</label>
+                <input type="text" class="form-control" id="country" list="countriesList" placeholder="Wpisz lub wybierz kraj" required>
+                <datalist id="countriesList">
+                  <!-- Opcje będą dynamicznie dodawane przez JavaScript -->
+                </datalist>
+              </div>
           <div class="col-md-2">
             <label for="countryCode" class="form-label">Kierunkowy</label>
             <select
