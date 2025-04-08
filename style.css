@@ -1,3 +1,64 @@
 .modal {
     background: #c6d0ff7a;
-}
+  }
+  
+  /* Ustawienia globalne dla pełnej wysokości viewportu */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Kontener - ograniczenie wysokości do 100vh, przewijanie w pionie
+     i wyśrodkowanie w poziomie bez centrowania pionowego */
+  .container {
+    max-height: 100vh;
+    overflow-y: auto;
+    display: block; 
+    margin: 0 auto; 
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .container h1 {
+    text-align: center;
+  }
+  
+  /* Formularz - szerokość maksymalna i jednokolumnowy układ */
+  #form {
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; /* wyśrodkuj cały formularz w poziomie */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Wymuszamy jednokolumnowy układ nawet na elementach .row z Bootstrapa */
+  #form .row {
+    flex-direction: column !important;
+  }
+  
+  /* Drobne odstępy i stylizacja pól formularza */
+  #form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  #form legend {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  #form label {
+    margin-bottom: 0.5rem;
+  }
+  
+  #form input,
+  #form select,
+  #form textarea {
+    margin-bottom: 0.5rem;
+  }
+  
