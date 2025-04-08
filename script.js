@@ -75,3 +75,28 @@ function getCountryByIP() {
     getCountryByIP();
   })();
   
+
+
+
+  // Skróty klawiaturowe dla formularza
+
+document.addEventListener('keydown', function(event) {
+  // Przechwytuj naciśnięcie klawisza Enter
+  // Upewnij się, że focus nie znajduje się w textarea, aby nie przeszkadzać przy wpisywaniu nowej linii
+  if (event.key === "Enter" && document.activeElement.tagName !== "TEXTAREA") {
+    event.preventDefault(); // zapobiega domyślnej akcji (np. dodaniu nowej linii lub niezamierzonemu przesłaniu formularza)
+    document.getElementById('form').submit();
+  }
+  
+  // Skrót: Ctrl+S – wysłanie formularza i zapobieżenie domyślnej akcji zapisu przeglądarki
+  if (event.key === "s" && event.ctrlKey) {
+    event.preventDefault();
+    document.getElementById('form').submit();
+  }
+  
+  // Skrót: Escape – resetowanie formularza
+  if (event.key === "Escape") {
+    event.preventDefault();
+    document.getElementById('form').reset();
+  }
+});
