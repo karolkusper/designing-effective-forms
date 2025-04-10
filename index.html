@@ -31,11 +31,17 @@
         <div class="row g-3">
           <div class="col-md-6">
             <label for="firstName" class="form-label">Imię</label>
-            <input type="text" class="form-control" id="firstName" placeholder="Wpisz imię" required />
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+              <input type="text" class="form-control" id="firstName" placeholder="Wpisz imię" required />
+            </div>
           </div>
           <div class="col-md-6">
             <label for="lastName" class="form-label">Nazwisko</label>
-            <input type="text" class="form-control" id="lastName" placeholder="Wpisz nazwisko" required />
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-person"></i></span>
+              <input type="text" class="form-control" id="lastName" placeholder="Wpisz nazwisko" required />
+            </div>
           </div>
         </div>
       </fieldset>
@@ -48,15 +54,24 @@
         <div class="row g-3">
           <div class="col-md-4">
             <label for="street" class="form-label">Ulica</label>
-            <input type="text" class="form-control" id="street" placeholder="Wpisz ulicę" required />
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+              <input type="text" class="form-control" id="street" placeholder="Wpisz ulicę" required />
+            </div>
           </div>
           <div class="col-md-4">
             <label for="city" class="form-label">Miasto</label>
-            <input type="text" class="form-control" id="city" placeholder="Wpisz miasto" required />
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-building"></i></span>
+              <input type="text" class="form-control" id="city" placeholder="Wpisz miasto" required />
+            </div>
           </div>
           <div class="col-md-4">
             <label for="zipCode" class="form-label">Kod pocztowy</label>
-            <input type="text" class="form-control" id="zipCode" placeholder="Wpisz kod pocztowy" required />
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-postcard"></i></span>
+              <input type="text" class="form-control" id="zipCode" placeholder="Wpisz kod pocztowy" required />
+            </div>
           </div>
         </div>
 
@@ -64,23 +79,32 @@
         <div class="row g-3 mt-3">
           <div class="col-md-4">
             <label for="country" class="form-label">Kraj</label>
-            <input type="text" class="form-control" id="country" list="countriesList" placeholder="Wpisz lub wybierz kraj" required>
-            <datalist id="countriesList">
-              <!-- Opcje będą dynamicznie dodawane przez JavaScript -->
-            </datalist>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-flag"></i></span>
+              <input type="text" class="form-control" id="country" list="countriesList" placeholder="Wpisz lub wybierz kraj" required>
+              <datalist id="countriesList">
+                <!-- Opcje będą dynamicznie dodawane przez JavaScript -->
+              </datalist>
+            </div>
           </div>
           <div class="col-md-2">
             <label for="countryCode" class="form-label">Kierunkowy</label>
-            <select class="form-select" id="countryCode" aria-label="Wybierz numer kierunkowy">
-              <option selected>Wybierz...</option>
-              <option value="+48">+48 (Polska)</option>
-              <option value="+1">+1 (Stany Zjednoczone)</option>
-              <!-- Dodaj więcej opcji, jeśli jest to potrzebne -->
-            </select>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-telephone-outbound"></i></span>
+              <select class="form-select" id="countryCode" aria-label="Wybierz numer kierunkowy">
+                <option selected>Wybierz...</option>
+                <option value="+48">+48 (Polska)</option>
+                <option value="+1">+1 (Stany Zjednoczone)</option>
+                <!-- Dodaj więcej opcji, jeśli jest to potrzebne -->
+              </select>
+            </div>
           </div>
           <div class="col-md-6">
             <label for="phoneNumber" class="form-label">Numer telefonu komórkowego</label>
-            <input type="text" class="form-control" id="phoneNumber" placeholder="Wpisz numer komórkowy" required />
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+              <input type="text" class="form-control" id="phoneNumber" placeholder="Wpisz numer komórkowy" required />
+            </div>
           </div>
         </div>
       </fieldset>
@@ -133,13 +157,21 @@
       <!-- Dane logowania i fakturowe -->
       <fieldset class="mb-4">
         <legend>Dane logowania i fakturowe</legend>
+        <!-- Input-group dla pola email -->
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Wpisz adres email" required />
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Wpisz adres email" required />
+          </div>
         </div>
+        <!-- Input-group dla pola hasła -->
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Wpisz hasło" required />
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Wpisz hasło" required />
+          </div>
         </div>
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="vatUE" />
@@ -147,14 +179,20 @@
         </div>
         <div class="mb-3">
           <label for="vatNumber" class="form-label">VAT Number</label>
-          <input type="text" class="form-control" id="vatNumber" aria-describedby="vatHelp" placeholder="Wpisz numer VAT" />
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-receipt"></i></span>
+            <input type="text" class="form-control" id="vatNumber" placeholder="Wpisz numer VAT" />
+          </div>
           <div id="vatHelp" class="form-text">
             Kod kraju państwa członkowskiego i seria cyfr unikalnych dla tego podmiotu gospodarczego.
           </div>
         </div>
         <div class="mb-3">
           <label for="invoiceData" class="form-label">Dane do faktury</label>
-          <textarea class="form-control" id="invoiceData" rows="3" placeholder="Wpisz dane do faktury"></textarea>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-file-earmark-text"></i></span>
+            <textarea class="form-control" id="invoiceData" rows="3" placeholder="Wpisz dane do faktury"></textarea>
+          </div>
         </div>
       </fieldset>
 
