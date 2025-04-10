@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -22,9 +22,12 @@
 </head>
 
 <body>
+  <!-- Skip link ułatwiający nawigację dla osób korzystających z klawiatury -->
+  <a href="#form" class="visually-hidden-focusable">Przejdź do formularza</a>
+
   <div class="container">
-    <h1>Uzupełnij formularz</h1>
-    <form id="form">
+    <h1 id="formHeading">Uzupełnij formularz</h1>
+    <form id="form" aria-labelledby="formHeading">
       <!-- Dane osobowe -->
       <fieldset class="mb-4">
         <legend>Dane osobowe</legend>
@@ -32,16 +35,24 @@
           <div class="col-md-6">
             <label for="firstName" class="form-label">Imię</label>
             <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-              <input type="text" class="form-control" id="firstName" placeholder="Wpisz imię" required />
+              <span class="input-group-text">
+                <i class="bi bi-person-fill" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" id="firstName" placeholder="Wpisz imię" required
+                     aria-describedby="firstNameHelp">
             </div>
+            <div id="firstNameHelp" class="visually-hidden">Wpisz swoje imię. Pole wymagane.</div>
           </div>
           <div class="col-md-6">
             <label for="lastName" class="form-label">Nazwisko</label>
             <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-person"></i></span>
-              <input type="text" class="form-control" id="lastName" placeholder="Wpisz nazwisko" required />
+              <span class="input-group-text">
+                <i class="bi bi-person" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" id="lastName" placeholder="Wpisz nazwisko" required
+                     aria-describedby="lastNameHelp">
             </div>
+            <div id="lastNameHelp" class="visually-hidden">Wpisz swoje nazwisko. Pole wymagane.</div>
           </div>
         </div>
       </fieldset>
@@ -55,23 +66,35 @@
           <div class="col-md-4">
             <label for="street" class="form-label">Ulica</label>
             <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
-              <input type="text" class="form-control" id="street" placeholder="Wpisz ulicę" required />
+              <span class="input-group-text">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" id="street" placeholder="Wpisz ulicę" required
+                     aria-describedby="streetHelp">
             </div>
+            <div id="streetHelp" class="visually-hidden">Podaj nazwę ulicy. Pole wymagane.</div>
           </div>
           <div class="col-md-4">
             <label for="city" class="form-label">Miasto</label>
             <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-building"></i></span>
-              <input type="text" class="form-control" id="city" placeholder="Wpisz miasto" required />
+              <span class="input-group-text">
+                <i class="bi bi-building" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" id="city" placeholder="Wpisz miasto" required
+                     aria-describedby="cityHelp">
             </div>
+            <div id="cityHelp" class="visually-hidden">Podaj nazwę miasta. Pole wymagane.</div>
           </div>
           <div class="col-md-4">
             <label for="zipCode" class="form-label">Kod pocztowy</label>
             <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-postcard"></i></span>
-              <input type="text" class="form-control" id="zipCode" placeholder="Wpisz kod pocztowy" required />
+              <span class="input-group-text">
+                <i class="bi bi-postcard" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" id="zipCode" placeholder="Wpisz kod pocztowy" required
+                     aria-describedby="zipCodeHelp">
             </div>
+            <div id="zipCodeHelp" class="visually-hidden">Podaj kod pocztowy w formacie xx-xxx. Pole wymagane.</div>
           </div>
         </div>
 
@@ -80,17 +103,23 @@
           <div class="col-md-4">
             <label for="country" class="form-label">Kraj</label>
             <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-flag"></i></span>
-              <input type="text" class="form-control" id="country" list="countriesList" placeholder="Wpisz lub wybierz kraj" required>
+              <span class="input-group-text">
+                <i class="bi bi-flag" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" id="country" list="countriesList" placeholder="Wpisz lub wybierz kraj" required
+                     aria-describedby="countryHelp">
               <datalist id="countriesList">
                 <!-- Opcje będą dynamicznie dodawane przez JavaScript -->
               </datalist>
             </div>
+            <div id="countryHelp" class="visually-hidden">Wybierz lub wpisz nazwę kraju. Pole wymagane.</div>
           </div>
           <div class="col-md-2">
             <label for="countryCode" class="form-label">Kierunkowy</label>
             <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-telephone-outbound"></i></span>
+              <span class="input-group-text">
+                <i class="bi bi-telephone-outbound" aria-hidden="true"></i>
+              </span>
               <select class="form-select" id="countryCode" aria-label="Wybierz numer kierunkowy">
                 <option selected>Wybierz...</option>
                 <option value="+48">+48 (Polska)</option>
@@ -102,9 +131,13 @@
           <div class="col-md-6">
             <label for="phoneNumber" class="form-label">Numer telefonu komórkowego</label>
             <div class="input-group">
-              <span class="input-group-text"><i class="bi bi-telephone"></i></span>
-              <input type="text" class="form-control" id="phoneNumber" placeholder="Wpisz numer komórkowy" required />
+              <span class="input-group-text">
+                <i class="bi bi-telephone" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" id="phoneNumber" placeholder="Wpisz numer komórkowy" required
+                     aria-describedby="phoneNumberHelp">
             </div>
+            <div id="phoneNumberHelp" class="visually-hidden">Wpisz numer telefonu. Pole wymagane.</div>
           </div>
         </div>
       </fieldset>
@@ -118,13 +151,13 @@
             <div class="form-check form-check-inline">
               <input type="radio" class="form-check-input" name="shippingMethod" id="shippingMethodDPD" value="DPD" required>
               <label class="form-check-label" for="shippingMethodDPD">
-                <i class="bi bi-truck"></i> DPD
+                <i class="bi bi-truck" aria-hidden="true"></i> DPD
               </label>
             </div>
             <div class="form-check form-check-inline">
               <input type="radio" class="form-check-input" name="shippingMethod" id="shippingMethodInPost" value="InPost" required>
               <label class="form-check-label" for="shippingMethodInPost">
-                <i class="bi bi-box-seam"></i> InPost
+                <i class="bi bi-box-seam" aria-hidden="true"></i> InPost
               </label>
             </div>
           </div>
@@ -135,19 +168,19 @@
             <div class="form-check form-check-inline">
               <input type="radio" class="form-check-input" name="paymentMethod" id="paymentMethodKarta" value="karta" required>
               <label class="form-check-label" for="paymentMethodKarta">
-                <i class="bi bi-credit-card"></i> Karta
+                <i class="bi bi-credit-card" aria-hidden="true"></i> Karta
               </label>
             </div>
             <div class="form-check form-check-inline">
               <input type="radio" class="form-check-input" name="paymentMethod" id="paymentMethodBLIK" value="blik" required>
               <label class="form-check-label" for="paymentMethodBLIK">
-                <i class="bi bi-phone"></i> BLIK
+                <i class="bi bi-phone" aria-hidden="true"></i> BLIK
               </label>
             </div>
             <div class="form-check form-check-inline">
               <input type="radio" class="form-check-input" name="paymentMethod" id="paymentMethodPosrednik" value="pośrednik" required>
               <label class="form-check-label" for="paymentMethodPosrednik">
-                <i class="bi bi-cash-coin"></i> Pośrednik płatności
+                <i class="bi bi-cash-coin" aria-hidden="true"></i> Pośrednik płatności
               </label>
             </div>
           </div>
@@ -161,37 +194,55 @@
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Wpisz adres email" required />
+            <span class="input-group-text">
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+            </span>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Wpisz adres email" required
+                   aria-describedby="emailHelp">
           </div>
+          <div id="emailHelp" class="visually-hidden">Wpisz poprawny adres email, np. użytkownik@domena.pl.</div>
         </div>
         <!-- Input-group dla pola hasła -->
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Wpisz hasło" required />
+            <span class="input-group-text">
+              <i class="bi bi-lock-fill" aria-hidden="true"></i>
+            </span>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Wpisz hasło" required
+                   aria-describedby="passwordHelp">
           </div>
+          <div id="passwordHelp" class="visually-hidden">Wpisz swoje hasło. Pole wymagane.</div>
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="vatUE" />
+          <input type="checkbox" class="form-check-input" id="vatUE" aria-describedby="vatUEHelp" />
           <label class="form-check-label" for="vatUE">VAT UE</label>
+          <div id="vatUEHelp" class="visually-hidden">Zaznacz, jeśli Twoja firma ma VAT UE.</div>
         </div>
         <div class="mb-3">
           <label for="vatNumber" class="form-label">VAT Number</label>
           <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-receipt"></i></span>
-            <input type="text" class="form-control" id="vatNumber" placeholder="Wpisz numer VAT" />
+            <span class="input-group-text">
+              <i class="bi bi-receipt" aria-hidden="true"></i>
+            </span>
+            <input type="text" class="form-control" id="vatNumber" placeholder="Wpisz numer VAT"
+                   aria-describedby="vatNumberHelp">
           </div>
-          <div id="vatHelp" class="form-text">
+          <div id="vatNumberHelp" class="visually-hidden">
             Kod kraju państwa członkowskiego i seria cyfr unikalnych dla tego podmiotu gospodarczego.
           </div>
         </div>
         <div class="mb-3">
           <label for="invoiceData" class="form-label">Dane do faktury</label>
           <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-file-earmark-text"></i></span>
-            <textarea class="form-control" id="invoiceData" rows="3" placeholder="Wpisz dane do faktury"></textarea>
+            <span class="input-group-text">
+              <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+            </span>
+            <textarea class="form-control" id="invoiceData" rows="3" placeholder="Wpisz dane do faktury"
+                      aria-describedby="invoiceDataHelp"></textarea>
+          </div>
+          <div id="invoiceDataHelp" class="visually-hidden">
+            Wpisz dane do faktury, takie jak adres, NIP, i nazwę firmy.
           </div>
         </div>
       </fieldset>
@@ -203,7 +254,7 @@
   </div>
 
   <!-- Raport kliknięć -->
-  <div class="modal fade" id="form-feedback-modal" tabindex="-1" aria-labelledby="raportModalLabel" aria-hidden="true">
+  <div class="modal fade" id="form-feedback-modal" tabindex="-1" aria-labelledby="raportModalLabel" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
